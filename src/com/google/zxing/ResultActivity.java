@@ -109,11 +109,11 @@ public class ResultActivity extends Activity {
 	@Override
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 		super.onActivityResult(requestCode, resultCode, data);
-		String contents = data.getStringExtra("SCAN_RESULT");
-		result_textView.setText(contents);
-		String info = android.os.Build.PRODUCT;
-		String cpu = android.os.Build.CPU_ABI;
-		String brand = android.os.Build.BRAND;
+		if(data != null){
+			String contents = data.getStringExtra("SCAN_RESULT");
+			result_textView.setText(contents);
+		}
+		
 	};
 
 	/*
